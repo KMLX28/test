@@ -9,11 +9,6 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index()
-    {
-        //
-    }
-
     public function create()
     {
         return view('posts.create', ['websites' => cache()->remember('websites', now()->addDay(), fn() => Website::all())]);
@@ -42,20 +37,5 @@ class PostController extends Controller
     public function show(Post $post)
     {
         return view('posts.show', ['post' => $post]);
-    }
-
-    public function edit(Post $post)
-    {
-        //
-    }
-
-    public function update(Request $request, Post $post)
-    {
-        //
-    }
-
-    public function destroy(Post $post)
-    {
-        //
     }
 }

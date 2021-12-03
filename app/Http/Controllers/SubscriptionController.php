@@ -7,12 +7,6 @@ use Illuminate\Http\Request;
 
 class SubscriptionController extends Controller
 {
-    public function index()
-    {
-        //
-    }
-
-
     public function store(Request $request)
     {
         $request->validate([
@@ -33,25 +27,5 @@ class SubscriptionController extends Controller
         ]);
 
         return redirect()->route('websites.index')->with('success', 'you have been subscribed successfully');
-    }
-
-    public function show(Subscription $subscription)
-    {
-        //
-    }
-
-    public function edit(Subscription $subscription)
-    {
-        //
-    }
-
-    public function update(Request $request, Subscription $subscription)
-    {
-        //
-    }
-
-    public function destroy(Subscription $subscription)
-    {
-        //
     }
 }
