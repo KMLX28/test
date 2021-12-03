@@ -11,7 +11,9 @@ class PostController extends Controller
 {
     public function create()
     {
-        return view('posts.create', ['websites' => cache()->remember('websites', now()->addDay(), fn() => Website::all())]);
+        return view('posts.create', [
+            'websites' => cache()->remember('websites', now()->addDay(), fn() => Website::all())
+        ]);
     }
 
     public function store(Request $request)
